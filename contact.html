@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contacto y nosotros</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="scss/custom.css" />
+    <style>
+      body {
+        background-color: #f8f9fa; /* Un fondo claro para mejor contraste */
+        color: #212529; /* Color de texto oscuro para mejor lectura */
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Fuente más moderna y legible */
+      }
+
+      .card {
+        border: none; /* Elimina los bordes de las cards para un diseño más limpio */
+        border-radius: 8px; /* Bordes redondeados para una apariencia más suave */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+      }
+
+      .card-header {
+        background-color: #3b3b3b; /* Color principal para el encabezado */
+        color: white; /* Texto blanco para contraste */
+        border-radius: 8px 8px 0 0; /* Redondea solo las esquinas superiores */
+      }
+
+      .card-body {
+        background-color: white; /* Fondo blanco para el cuerpo de la tarjeta */
+        padding: 20px; /* Espacio interno suficiente para legibilidad */
+      }
+    </style>
+  </head>
+  <body>
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-3 rounded">
+        <div class="container">
+          <a class="navbar-brand end">
+            <img src="img/logo.png" alt="Logo Editorial Manga" height="40" />
+            <!-- Asegúrate de ajustar la altura según tus necesidades -->
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tienda.html">Tienda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="foro.html">Foro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="contact.html"
+                  >Contacto y Nosotros</a
+                >
+              </li>
+            </ul>
+            <form class="d-flex align-items-center me-4" action="tienda.html" method="GET">
+              <input
+                  class="form-control me-2"
+                  type="search"
+                  name="search"
+                  placeholder="Buscar Libro"
+                  aria-label="Search"
+              />
+              <button
+                  class="btn btn-outline-success"
+                  type="submit"
+                  aria-label="Buscar"
+              >
+                  <i class="bi bi-search"></i>
+              </button>
+          </form>
+            
+          </div>
+          <div class="shopping-cart">
+            <button id="cart-btn" class="btn btn-outline-light">
+              <i class="bi bi-bag-fill"></i>
+              <span
+                id="cart-count"
+                class="badge bg-success ms-1 rounded-pill"
+              ></span>
+            </button>
+          </div>
+          <a id="user-icon" class="navbar-brand" href="#">
+            <i class="bi bi-person-circle" style="font-size: 1.5em "></i>
+          </a>
+        </div>
+      </nav>
+      <div id="user-popup">
+        <form id="user-form">
+          <div>
+            <label for="username">Nombre:</label>
+            <input type="text" id="username" name="username">
+          </div>
+          <div>
+            <label for="password">Contraseña:</label>
+            <input type="text" id="password" name="password">
+          </div>
+          <button type="submit">Guardar</button>
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <div class="container mt-3">
+        <div class="cart-dropdown">
+          <ul class="cart-items list-group">
+            <!-- Los items del carrito se añadirán aquí -->
+          </ul>
+          <div class="p-3">
+            <p class="subtotal">
+              Total: <span id="cart-subtotal">0.00€</span>
+            </p>
+            <button class="btn btn-success w-100 btn-block go-to-checkout">
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container">
+        <header class="mb-5 text-center">
+          <h1>Contacto y Nosotros</h1>
+        </header>
+        <div class="row">
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header">Quiénes Somos</div>
+              <div class="card-body">
+                <p>
+                  Somos Manga Editorial, un sello editorial dedicado a traer las
+                  mejores historias de manga japonés al público hispanohablante.
+                  Recientemente fundada en 2024, nos especializamos en la traducción,
+                  publicación y distribución de mangas aclamados y emergentes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header">Dónde Nos Encontramos</div>
+              <div class="card-body">
+                <p>
+                  Nuestra oficina central está ubicada en Madrid, España, en la
+                  Calle Ficticia 123. Nuestras instalaciones incluyen áreas de
+                  traducción, edición y distribución, donde nuestro equipo
+                  trabaja para ofrecerte lo mejor del manga.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header">Nuestros Distribuidores</div>
+              <div class="card-body">
+                <ul>
+                  <li>Librerías Ficticias S.L. - España</li>
+                  <li>Distribuidores Manga S.A. - España</li>
+                  <li>Amantes del Manga Ltda. - España</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="card">
+              <div class="card-header">
+                Cómo Contactar Con Nosotros
+              </div>
+              <div class="card-body">
+                <p>
+                  Para cualquier consulta, puedes enviarnos un correo
+                  electrónico a contacto@nuevaeditorial.es o llamarnos al +34
+                  910 000 000. Puedes seguirnos en redes sociales bajo el mismo nombre.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-light text-center p-3 mt-5 rounded" id="footer">
+      © 2024 NuevaEditorial. Todos los derechos reservados.
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/compra.js"></script>
+    <script src="js/usu.js"></script>
+  </body>
+</html>

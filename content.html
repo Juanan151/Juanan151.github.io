@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Detalles de la Obra</title>
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.0/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="scss/custom.css" />
+  </head>
+  <body>
+    <header class="sticky-top">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark mt-3 rounded">
+        <div class="container">
+          <a class="navbar-brand end">
+            <img src="img/logo.png" alt="Logo Editorial Manga" height="40" />
+            <!-- Asegúrate de ajustar la altura según tus necesidades -->
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="tienda.html">Tienda</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="foro.html">Foro</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contacto y Nosotros</a>
+              </li>
+            </ul>
+            <form class="d-flex align-items-center me-4" action="tienda.html" method="GET">
+              <input
+                  class="form-control me-2"
+                  type="search"
+                  name="search"
+                  placeholder="Buscar Libro"
+                  aria-label="Search"
+              />
+              <button
+                  class="btn btn-outline-success"
+                  type="submit"
+                  aria-label="Buscar"
+              >
+                  <i class="bi bi-search"></i>
+              </button>
+          </form>
+          </div>
+          <div class="shopping-cart">
+            <button id="cart-btn" class="btn btn-outline-light">
+              <i class="bi bi-bag-fill"></i>
+              <span
+                id="cart-count"
+                class="badge bg-success ms-1 rounded-pill"
+              ></span>
+            </button>
+          </div>
+          <a id="user-icon" class="navbar-brand" href="#">
+            <i class="bi bi-person-circle" style="font-size: 1.5em "></i>
+          </a>
+        </div>
+      </nav>
+      <div id="user-popup">
+        <form id="user-form">
+          <div>
+            <label for="username">Nombre:</label>
+            <input type="text" id="username" name="username">
+          </div>
+          <div>
+            <label for="password">Contraseña:</label>
+            <input type="text" id="password" name="password">
+          </div>
+          <button type="submit">Guardar</button>
+        </form>
+      </div>
+    </header>
+
+    <main>
+      <div class="container mt-3">
+        <div class="cart-dropdown">
+          <ul class="cart-items list-group">
+            <!-- Los items del carrito se añadirán aquí -->
+          </ul>
+          <div class="p-3">
+            <p class="subtotal">
+              Total: <span id="cart-subtotal">0.00€</span>
+            </p>
+            <button class="btn btn-success w-100 btn-block go-to-checkout">
+              Comprar
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="container ">
+        <div class="row">
+          <div class="col-2">
+            
+          </div>
+          <div class="col-4">
+            <div class="book-cover">
+              <img id="cover" src="" alt="Portada del libro" />
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="book-details">
+              <h1 id="title">Título del Libro</h1>
+              <p class="price" id="price">Precio</p>
+              <p id="synopsis"></strong>Sinopsis del libro aquí.</p>
+              <div>
+                <strong>Detalles: </strong><span id="volume-info">Información adicional aquí.</span>
+              </p> 
+              <p><strong>ISBN:</strong> <span id="isbn">Cargando...</span></p>
+              <p>
+                <strong>Fecha de Publicación:</strong>
+                <span id="publication-date">Cargando...</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="bg-dark text-light text-center p-3 mt-5 rounded" id="footer">
+      © 2024 NuevaEditorial. Todos los derechos reservados.
+    </footer>
+    <script src="js/content.js"></script>
+    <script src="js/compra.js"></script>
+    <script src="js/usu.js"></script>
+  </body>
+</html>

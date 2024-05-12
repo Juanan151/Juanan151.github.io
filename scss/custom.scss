@@ -1,0 +1,513 @@
+// Custom.scss
+// Option A: Include all of Bootstrap
+
+// Include any default variable overrides here (though functions won't be available)
+
+$color-primary: #4A90E2; // Azul, para botones y enlaces
+$color-secondary: #F5A623; // Naranja, para llamadas a la acción
+$color-background: #F0F2F5; // Gris claro, para el fondo del sitio
+$color-text: #333333; // Gris oscuro, para texto principal
+$color-footer: #212529; // Casi negro, para el pie de página
+$color-primary-dark: darken($color-primary, 10%); // Una versión más oscura para el hover
+
+body {
+    background-color: $color-background;
+    color: $color-text;
+    font-family: 'Arial', sans-serif;
+}
+
+a {
+    color: $color-primary;
+
+    &:hover {
+        color: darken($color-primary, 10%);
+    }
+}
+
+footer {
+    background-color: $color-footer;
+    color: white;
+    margin-left: 30px;
+    /* Ajusta según tus necesidades */
+    margin-right: 30px;
+    /* Ajusta según tus necesidades */
+    border-radius: 20px;
+
+}
+
+/* Media query para tabletas */
+@media (max-width: 768px) {
+    .filter-sidebar {
+        position: static;
+        /* Desactiva sticky para pantallas medianas */
+        width: 100%;
+        /* Hace que la barra de filtros ocupe toda la anchura */
+        margin-bottom: 20px;
+        /* Espacio después de la barra de filtros */
+    }
+}
+
+/* Media query para móviles */
+@media (max-width: 576px) {
+    .filter-sidebar {
+        position: static;
+        /* Desactiva sticky en dispositivos móviles */
+        width: 100%;
+        /* Ajusta la barra de filtros para que ocupe todo el ancho */
+    }
+
+    .row {
+        min-height: auto;
+        /* Altura auto para facilitar el desplazamiento */
+    }
+}
+
+
+
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+/* Añade margen vertical a cada row */
+.row {
+    margin-top: 20px;
+    /* Ajusta según la cantidad de espacio deseada */
+    margin-bottom: 20px;
+}
+
+.cart-icon-container {
+    position: relative;
+}
+
+.cart-btn {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+.cart-items {
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cart-summary {
+    padding: 10px;
+    border-top: 1px solid #ccc;
+}
+
+.subtotal {
+    margin: 10px 0;
+}
+
+.checkout-btn {
+    width: 100%;
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.cart-dropdown {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    /* O el ancho que prefieras */
+    height: 100vh;
+    /* Altura completa de la ventana */
+    background-color: #ffffff;
+    /* Fondo blanco para mejor legibilidad */
+    color: #333333;
+    /* Texto oscuro */
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.5);
+    /* Sombra para dar profundidad */
+    z-index: 1050;
+    /* Asegúrate de que está sobre otros elementos */
+    display: none;
+    /* Oculto por defecto */
+    overflow-y: auto;
+    /* Permite scroll si el contenido es muy largo */
+}
+
+.cart-btn {
+    z-index: 1051;
+    /* Más alto que el carrito para que sea accesible */
+}
+
+
+.cart-items li {
+    list-style: none;
+}
+
+.checkout-btn {
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.card img {
+    width: 100%;
+    /* Asegura que la imagen siempre ocupe todo el ancho de la tarjeta */
+    height: 300px;
+    /* Define una altura fija para todas las imágenes */
+    object-fit: cover;
+    /* Asegura que la imagen se recorte y cubra el área designada sin distorsionarse */
+}
+
+/* Estilos adicionales para garantizar visibilidad */
+.cart-btn:hover+.cart-dropdown,
+.cart-dropdown:hover {
+    display: block;
+    /* Muestra el carrito cuando se pasa el mouse sobre el botón o el carrito mismo */
+}
+
+.carousel-item .col-md-3 {
+    float: left;
+    width: 25%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.carousel-item .col-md-6 {
+    float: left;
+    width: 50%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+
+    .card img {
+        width: 100%;
+        /* Asegura que la imagen siempre ocupe todo el ancho de la tarjeta */
+        height: 600px;
+        /* Define una altura fija para todas las imágenes */
+        object-fit: cover;
+        /* Asegura que la imagen se recorte y cubra el área designada sin distorsionarse */
+    }
+}
+
+// Then add additional custom code here
+
+/* Personalización para los botones negros */
+.btn-outline-primary {
+    color: white;
+    /* Texto blanco */
+    background-color: black;
+    /* Fondo negro */
+    border-color: black;
+    /* Borde negro */
+}
+
+.btn-outline-primary:hover,
+.btn-outline-primary:focus {
+    color: black;
+    /* Texto negro para hover/focus */
+    background-color: white;
+    /* Fondo blanco para hover/focus */
+    border-color: white;
+    /* Borde blanco para hover/focus */
+}
+
+.btn-check:checked+.btn-outline-primary,
+.btn-check:active+.btn-outline-primary {
+    color: black;
+    /* Texto negro cuando está activo/seleccionado */
+    background-color: white;
+    /* Fondo blanco cuando está activo/seleccionado */
+    border-color: white;
+    /* Borde blanco cuando está activo/seleccionado */
+}
+
+
+
+// Aplicación de la paleta
+
+
+.btn-primary {
+    border-color: darken($color-primary, 15%);
+
+    &:hover {
+        background-color: darken($color-primary, 10%);
+    }
+}
+
+
+// Estilos para la barra de navegación
+.navbar {
+    background-color: $color-footer; // Utiliza el color oscuro definido anteriormente
+
+    margin-left: 30px;
+    /* Ajusta según tus necesidades */
+    margin-right: 30px;
+    /* Ajusta según tus necesidades */
+    border-radius: 20px;
+
+    .form-control {
+        max-width: 180px; // Ajusta según las necesidades de tu diseño
+    }
+
+    .btn-outline-success {
+        margin-left: -5px; // Reduce el espacio entre el campo de búsqueda y el botón
+    }
+
+    .navbar-nav {
+        margin-right: 20px; // Asegura un espacio entre los ítems del menú y el buscador
+    }
+
+    .navbar-text {
+        padding-left: 15px; // Añade un poco de espacio antes del icono del carrito
+    }
+
+    .nav-link {
+        transition: background-color 0.3s ease, color 0.3s ease; // Suaviza la transición de colores
+
+        // Estado hover
+        &:hover {
+            background-color: lighten($color-footer, 10%); // Aclara el fondo ligeramente
+            color: $color-secondary; // Cambia el color del texto al color secundario
+        }
+    }
+}
+
+
+.filter-sidebar {
+    position: sticky;
+    /* Ajusta esto según el margen superior que deseas antes de que se fije */
+    align-self: center;
+
+    padding: 20px;
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    /* Añade un borde ligero para mejorar la visibilidad */
+    border-radius: 5px;
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    /* Alineación vertical de los elementos */
+    padding: 10px;
+    /* Espaciado para mayor claridad */
+    border-bottom: 1px solid #eee;
+    /* Separación visual entre elementos */
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+    /* No añadir borde al último elemento */
+}
+
+.form-check-input {
+    margin-top: 0;
+    /* Ajustar la alineación vertical del checkbox */
+    margin-right: 10px;
+    /* Espacio entre la casilla y el texto */
+    cursor: pointer;
+}
+
+.form-check-label {
+    cursor: pointer;
+    /* Extiende la área clickeable al texto también */
+    flex-grow: 1;
+    /* Permite que el texto ocupe el espacio disponible */
+}
+
+.navbar {
+    position: relative;
+    /* Asegúrate de que tenga posición relativa o fija */
+    z-index: 1050;
+    /* Un valor alto para estar sobre otros elementos */
+}
+
+.cart-items {
+    list-style: none; // Remueve los estilos de lista
+    padding: 0;
+}
+
+.cart-item {
+    display: flex; // Usa flexbox para alinear los elementos
+    align-items: center; // Centra los elementos verticalmente
+    gap: 10px; // Añade un espacio entre la imagen y el texto
+    padding: 10px; // Añade un poco de padding para que no esté todo tan apretado
+}
+
+.cart-item img {
+    flex-shrink: 0; // Evita que la imagen se redimensione incorrectamente
+    border-radius: 5px; // Opcional: añade bordes redondeados a las imágenes
+}
+
+.cart-dropdown {
+
+    overflow-y: scroll;
+    /* Asegura que el carrito pueda desplazarse */
+}
+
+.cart-dropdown {
+    z-index: 1040;
+    /* Menor que el de la navbar para que aparezca debajo */
+}
+
+.cart-dropdown {
+    position: fixed;
+    top: 60px;
+    /* Ajusta según tu cabecera */
+    right: 30px;
+    width: 450px;
+    overflow-y: auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    z-index: 1000;
+    /* Asegúrate de que el z-index sea menor que el del footer si quieres que esté detrás */
+}
+
+
+footer {
+    position: relative;
+
+    z-index: 1050;
+    /* Más alto que el carrito */
+}
+
+
+.cart-items {
+    padding: 10px;
+    margin-bottom: 10px;
+    /* Espacio antes del botón 'Ir a pagar' */
+}
+
+.go-to-checkout {
+    margin: 10px 10px 10px 10px;
+    /* Asegura un margen alrededor del botón */
+}
+
+.carousel-item {
+    position: relative;
+    text-align: center;
+    color: #fff;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    position: absolute;
+    bottom: 20%;
+    left: 50%;
+    transform: translateX(0%);
+    padding: 20px;
+}
+
+.carousel-caption h5 {
+    font-size: 2rem;
+    /* Ajusta el tamaño según necesites */
+}
+
+.carousel-caption p {
+    font-size: 1.2rem;
+    /* Ajusta el tamaño según necesites */
+}
+
+/* Personalización del carrusel */
+.carousel-item .col {
+    min-width: 25%;
+    /* Cada columna debe tener al menos el 25% del ancho del carrusel para ajustarse 4 en una fila */
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-size: 100%;
+    /* Asegurar que el ícono se vea bien dentro del botón ajustado */
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px;
+    overflow: hidden;
+    /* Evita desbordamientos horizontales */
+    text-overflow: ellipsis;
+    /* Muestra puntos suspensivos si el texto es demasiado largo */
+    white-space: nowrap;
+    /* Evita que el texto se envuelva a la línea siguiente */
+}
+
+.cart-item img {
+    width: 50px;
+    /* Define un tamaño fijo para las imágenes */
+    height: auto;
+    /* Mantiene la proporción de las imágenes */
+    flex-shrink: 0;
+    /* Evita que la imagen se encoja */
+}
+
+/* Aumenta el margen entre las filas de productos */
+.product-row {
+    margin-bottom: 30px;
+    /* Ajusta el valor según tus necesidades */
+}
+
+.cart-items li {
+    padding: 10px;
+    /* Añade padding dentro de cada ítem del carrito */
+    margin-bottom: 10px;
+    /* Añade un margen en la parte inferior de cada ítem */
+    border-bottom: 1px solid #ccc;
+    /* Opcional: añade una línea para separar los ítems */
+    list-style-type: none;
+    /* Elimina los bullets de lista para limpiar la visualización */
+}
+
+.cart-items {
+    margin: 20px;
+    /* Añade un margen alrededor de la lista completa para no tocar los bordes del contenedor del carrito */
+}
+
+.cart-items li span {
+    margin-right: 10px;
+    /* Añade margen a la derecha del título */
+}
+
+.remove-item-btn {
+    margin-left: 10px;
+    /* O añade margen a la izquierda del botón Quitar */
+}
+
+
+.book-details {
+    padding: 20px;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+}
+
+.price {
+    font-size: 24px;
+    color: green;
+}
+
+
+.filter-demographics {
+    margin-bottom: 30px;
+    /* Añade 30px de margen en la parte inferior */
+}
+
+#user-popup {
+    display: none; /* Inicialmente oculto */
+    position: absolute; /* Posición absoluta para colocarlo relativo a su contenedor posicionado más cercano */
+    right: 40px; /* Aumenta el valor si necesitas que se mueva más a la izquierda */
+    top: 60px; /* Ajusta según la necesidad para alinear con la barra de navegación */
+    background-color: white;
+    padding: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    z-index: 1100; /* Asegúrate de que el popup está sobre otros elementos */
+}
+
+#user-icon {
+    margin-left: 25px;
+     /* Ajusta este valor para mover el icono más a la derecha */
+     margin-right: -50px;
+}
+
