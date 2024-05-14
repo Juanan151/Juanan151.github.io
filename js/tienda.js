@@ -1,5 +1,3 @@
-// scripts.js
-
 const products = [
   {
     id: 4,
@@ -7,6 +5,10 @@ const products = [
     price: 10.99,
     demographics: "Shonen",
     genres: ["aventura", "fantasía"],
+    edicionLimitada: false,
+    coleccionTerminada: false,
+    oneShot: false,
+    publicationDate: "2013-04-06",
     image: "img/aot.jpg",
   },
   {
@@ -15,6 +17,10 @@ const products = [
     price: 9.99,
     demographics: "Shonen",
     genres: ["aventura", "fantasía"],
+    edicionLimitada: true,
+    coleccionTerminada: true,
+    oneShot: false,
+    publicationDate: "2000-01-01",
     image: "img/naruto.jpg",
   },
   {
@@ -23,6 +29,10 @@ const products = [
     price: 9.99,
     demographics: "Shonen",
     genres: ["aventura", "acción"],
+    edicionLimitada: false,
+    coleccionTerminada: false,
+    oneShot: false,
+    publicationDate: "1997-07-22",
     image: "img/onepiece.jpg",
   },
   {
@@ -31,6 +41,10 @@ const products = [
     price: 8.99,
     demographics: "Shojo",
     genres: ["acción", "superhéroes"],
+    edicionLimitada: false,
+    coleccionTerminada: false,
+    oneShot: false,
+    publicationDate: "2014-11-20",
     image: "img/mha.jpg",
   },
   {
@@ -39,6 +53,10 @@ const products = [
     price: 9.49,
     demographics: "Shonen",
     genres: ["aventura", "fantasía"],
+    edicionLimitada: false,
+    coleccionTerminada: true,
+    oneShot: false,
+    publicationDate: "2001-08-07",
     image: "img/bleach.jpg",
   },
   {
@@ -47,6 +65,10 @@ const products = [
     price: 9.99,
     demographics: "Seinen",
     genres: ["misterio", "sobrenatural"],
+    edicionLimitada: false,
+    coleccionTerminada: true,
+    oneShot: false,
+    publicationDate: "2003-12-01",
     image: "img/deathnote.jpg",
   },
   {
@@ -55,6 +77,10 @@ const products = [
     price: 9.99,
     demographics: "Shonen",
     genres: ["acción", "aventura"],
+    edicionLimitada: false,
+    coleccionTerminada: false,
+    oneShot: false,
+    publicationDate: "2015-06-20",
     image: "img/dbs.jpg",
   },
   {
@@ -63,7 +89,23 @@ const products = [
     price: 9.99,
     demographics: "Seinen",
     genres: ["horror", "sobrenatural"],
+    edicionLimitada: false,
+    coleccionTerminada: true,
+    oneShot: false,
+    publicationDate: "2011-09-08",
     image: "img/tokyoghoul.jpg",
+  },
+  {
+    id: 9,
+    name: "One Punch Man",
+    price: 9.99,
+    demographics: "Seinen",
+    genres: ["acción", "comedia"],
+    edicionLimitada: false,
+    coleccionTerminada: false,
+    oneShot: true,
+    publicationDate: "2012-06-14",
+    image: "img/onepunch.png",
   },
 ];
 
@@ -123,30 +165,23 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function applyFilters() {
-  const selectedDemographics = Array.from(
-    document.querySelectorAll(
-      '.filter-demographics input[type="checkbox"]:checked'
-    )
-  ).map((el) => el.id);
   const selectedGenres = Array.from(
     document.querySelectorAll('.filter-genres input[type="checkbox"]:checked')
   ).map((el) => el.id);
 
-  const filteredProducts = products.filter(
+  let filteredProducts = products.filter(
     (product) =>
-      (selectedDemographics.length === 0 ||
-        selectedDemographics.includes(product.demographics.toLowerCase())) &&
-      (selectedGenres.length === 0 ||
-        product.genres.some((genre) =>
-          selectedGenres.includes(genre.toLowerCase())
-        ))
+      selectedGenres.length === 0 ||
+      product.genres.some((genre) =>
+        selectedGenres.includes(genre.toLowerCase())
+      )
   );
 
   renderProducts(filteredProducts);
 }
 
 document
-  .querySelectorAll(".filter-genres input, .filter-demographics input")
+  .querySelectorAll(".filter-genres input")
   .forEach((input) => {
     input.addEventListener("change", applyFilters);
   });
@@ -154,9 +189,18 @@ document
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   const searchQuery = urlParams.get("search");
+  const demographyQuery = urlParams.get("demography");
+  const filterQuery = urlParams.get("filter");
+  const genreQuery = urlParams.get("genre");
 
   if (searchQuery) {
     filterBooks(searchQuery.toLowerCase());
+  } else if (demographyQuery) {
+    filterByDemography(demographyQuery.toLowerCase());
+  } else if (filterQuery) {
+    filterByAttribute(filterQuery);
+  } else if(genreQuery){
+    filterByGenre(genreQuery);
   } else {
     renderProducts(products); // Renderiza todos los productos si no hay parámetro de búsqueda
   }
@@ -169,3 +213,71 @@ function filterBooks(searchQuery) {
 
   renderProducts(filteredProducts);
 }
+
+function filterByDemography(demographyQuery) {
+  const filteredProducts = products.filter(
+    (product) => product.demographics.toLowerCase() === demographyQuery
+  );
+
+  renderProducts(filteredProducts);
+}
+
+function filterByAttribute(filterQuery) {
+  const filteredProducts = products.filter((product) => {
+    if (filterQuery === "edicionLimitada") {
+      return product.edicionLimitada;
+    } else if (filterQuery === "coleccionTerminada") {
+      return product.coleccionTerminada;
+    } else if (filterQuery === "oneShot") {
+      return product.oneShot;
+    }
+    return false;
+  });
+
+  renderProducts(filteredProducts);
+}
+
+document.getElementById('sort-az').addEventListener('click', function() {
+  const sortedProducts = [...products].sort((a, b) => a.name.localeCompare(b.name));
+  renderProducts(sortedProducts);
+});
+
+document.getElementById('sort-price').addEventListener('click', function() {
+  const sortedProducts = [...products].sort((a, b) => a.price - b.price);
+  renderProducts(sortedProducts);
+});
+
+document.getElementById('sort-date').addEventListener('click', function() {
+  const sortedProducts = [...products].sort((a, b) => new Date(a.publicationDate) - new Date(b.publicationDate));
+  renderProducts(sortedProducts);
+});
+
+function filterByGenre(genre) {
+  const filteredProducts = products.filter(product =>
+    product.genres.some(g => g.toLowerCase() === genre)
+  );
+  renderProducts(filteredProducts);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Actualizar las migas de pan según los filtros
+  // Actualizar las migas de pan según los filtros
+  const params = new URLSearchParams(window.location.search);
+  const demography = params.get('demography');
+  const filter = params.get('filter');
+  const genre = params.get('genre');
+  const search = params.get('search');
+
+  if (demography) {
+    document.getElementById('breadcrumb-current').textContent = demography.charAt(0).toUpperCase() + demography.slice(1);
+  } else if (filter) {
+    document.getElementById('breadcrumb-current').textContent = filter.charAt(0).toUpperCase() + filter.slice(1).replace(/([A-Z])/g, ' $1');
+  } else if (genre) {
+    document.getElementById('breadcrumb-current').textContent = genre.charAt(0).toUpperCase() + genre.slice(1);
+  } else if (search) {
+    document.getElementById('breadcrumb-current').textContent = search;
+  } else {
+    document.getElementById('breadcrumb-current').textContent = 'Todos';
+  }
+});

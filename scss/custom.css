@@ -5,6 +5,13 @@ body {
   font-family: "Arial", sans-serif;
 }
 
+body {
+  background-image: url("/img/fondo4.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Para que la imagen de fondo permanezca fija al hacer scroll */
+}
+
 a {
   color: #4A90E2;
 }
@@ -20,6 +27,10 @@ footer {
   margin-right: 30px;
   /* Ajusta según tus necesidades */
   border-radius: 20px;
+}
+
+footer {
+  font-size: 0.875em;
 }
 
 /* Media query para tabletas */
@@ -12118,6 +12129,15 @@ textarea.form-control-lg {
   padding-left: 15px;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; /* remove the gap so it doesn't close */
+}
+
+.dropdown-menu {
+  margin-top: 0; /* remove the gap so it doesn't close */
+}
+
 .carousel-item .col-md-6 {
   float: left;
   width: 50%;
@@ -12192,11 +12212,16 @@ textarea.form-control-lg {
 .navbar .navbar-text {
   padding-left: 15px;
 }
-.navbar .nav-link {
+
+.nav-link {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-.navbar .nav-link:hover {
-  background-color: #383f45;
+.nav-link:hover {
+  color: #F5A623;
+}
+
+.dropdown-item:hover {
+  background-color: rgba(114, 109, 109, 0.1);
   color: #F5A623;
 }
 
@@ -12415,18 +12440,33 @@ footer {
 }
 
 #user-popup {
-  display: none; /* Inicialmente oculto */
-  position: absolute; /* Posición absoluta para colocarlo relativo a su contenedor posicionado más cercano */
-  right: 40px; /* Aumenta el valor si necesitas que se mueva más a la izquierda */
-  top: 60px; /* Ajusta según la necesidad para alinear con la barra de navegación */
+  display: none;
+  /* Inicialmente oculto */
+  position: absolute;
+  /* Posición absoluta para colocarlo relativo a su contenedor posicionado más cercano */
+  right: 40px;
+  /* Aumenta el valor si necesitas que se mueva más a la izquierda */
+  top: 60px;
+  /* Ajusta según la necesidad para alinear con la barra de navegación */
   background-color: white;
   padding: 10px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  z-index: 1100; /* Asegúrate de que el popup está sobre otros elementos */
+  z-index: 1100;
+  /* Asegúrate de que el popup está sobre otros elementos */
 }
 
 #user-icon {
   margin-left: 25px;
   /* Ajusta este valor para mover el icono más a la derecha */
   margin-right: -50px;
+}
+
+.navbar-brand:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
 }/*# sourceMappingURL=custom.css.map */
