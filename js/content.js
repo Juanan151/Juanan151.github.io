@@ -174,6 +174,11 @@ const comments = [
   },
 ];
 
+function quitarVol(numeroTitulo) {
+  const tituloSinVol = numeroTitulo.replace(/Vol\.\s*\d+/i, "").trim();
+  return tituloSinVol;
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   const params = new URLSearchParams(window.location.search);
   const volumeId = parseInt(params.get("volume"), 10); // Obtiene el ID del volumen de la URL
@@ -201,6 +206,9 @@ document.addEventListener("DOMContentLoaded", function () {
       genresContainer.appendChild(genreButton);
     });
 
+    document.getElementById("buy-button").addEventListener("click", () => {
+      window.location.href = `tienda.html?search=${quitarVol(volume.title)}`;
+    });
     // Filtra y muestra los comentarios correspondientes a este volumen
     renderComments(volume.title);
   } else {
