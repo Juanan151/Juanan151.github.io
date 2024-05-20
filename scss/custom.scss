@@ -257,6 +257,29 @@ footer {
 }
 
 
+.page-title{
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+
+.page-title h1, .page-title span {
+    margin: 0;
+    font-size: 24px;
+}
+
+.breadcrumb {
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    border-radius: 10px;
+}
+
+
 // Estilos para la barra de navegación
 .navbar {
     background-color: $color-footer; // Utiliza el color oscuro definido anteriormente
@@ -415,6 +438,26 @@ footer {
     color: #fff;
 }
 
+/* Botones */
+.btn-primary {
+    background-color: #007bff; /* Azul fuerte */
+
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Azul más oscuro para hover */
+}
+
+.btn-three {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-three:hover {
+    background-color: #c82333;
+}
+
+
 .carousel-caption {
     background: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
@@ -551,3 +594,4 @@ footer {
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
 }
+

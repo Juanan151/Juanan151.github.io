@@ -149,7 +149,7 @@ function renderProducts(products) {
           <p class="card-text">Precio: ${product.price}€</p>
           <div class="button-container">
           <a href="content.html?volume=${product.id}" class="btn btn-primary">Info</a>
-          <button class="btn btn-success add-to-cart-btn" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}">
+          <button class="btn btn-three add-to-cart-btn" data-id="${product.id}" data-name="${product.name}" data-price="${product.price}" data-image="${product.image}" style="margin-left: 10px;">
             Añadir al carrito
           </button>
           </div>
@@ -278,6 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
   } else if (search) {
     document.getElementById('breadcrumb-current').textContent = search;
   } else {
-    document.getElementById('breadcrumb-current').textContent = 'Todos';
+    document.getElementById('breadcrumb-current').textContent = 'Manga';
   }
 });

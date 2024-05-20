@@ -71,7 +71,7 @@
               <li class="nav-item"><a class="nav-link" href="tienda.html?filter=oneShot">One-Shot</a></li>
               <li class="nav-item"><a class="nav-link" href="tienda.html?filter=coleccionTerminada">Colecciones Terminadas</a></li>
               <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">Más</a>
+                <a class="nav-link dropdown-toggle" href="#" id="moreDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">La Editorial</a>
                 <ul class="dropdown-menu" aria-labelledby="moreDropdown">
                   <li><a class="dropdown-item" href="contact.html">Contacto</a></li>
                   <li><a class="dropdown-item" href="about.html">Nosotros</a></li>
@@ -118,21 +118,14 @@
           </ul>
           <div class="p-3">
             <p class="subtotal">Total: <span id="cart-subtotal">0.00€</span></p>
-            <button id="go-to-checkout" class="btn btn-success w-100 btn-block go-to-checkout">Comprar</button>
+            <button id="go-to-checkout" class="btn btn-three w-100 btn-block go-to-checkout">Comprar</button>
           </div>
         </div>
-        <div class="row breadcrumb-container">
-          <div class="col-12">
-            <nav aria-label="breadcrumb">
-              <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="tienda.html">Tienda</a></li>
-                <li class="breadcrumb-item active" aria-current="page" id="breadcrumb-current">Todos</li>
-              </ol>
-            </nav>
-          </div>
-        </div>
+        <div class="breadcrumb page-title">
+          <span id="breadcrumb-current">Manga</span>
+      </div>
         <div class="row">
-          <div class="col-md-12 d-flex justify-content-end mb-3">
+          <div class="col-md-12 d-flex justify-content-end" style="margin-left: -21px;">
             <div class="dropdown">
               <button class="btn btn-secondary dropdown-toggle" type="button" id="sortDropdown" data-bs-toggle="dropdown" aria-expanded="false">
                 Ordenar por
@@ -144,7 +137,7 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3" style="margin-top: 40px;">
             <div class="filter-sidebar">
               <h5>Filtrar por Género</h5>
               <ul class="list-group filter-genres">
